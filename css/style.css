@@ -1,7 +1,7 @@
 .hero {
   background: url(/images/mobile/image-hero.jpg) no-repeat;
   background-size: cover;
-  height: 90vh;
+  height: 95vh;
   display: grid;
   grid-template-rows: repeat(3, 1fr); }
   .hero__title {
@@ -10,7 +10,7 @@
     text-transform: uppercase;
     text-align: left;
     border: 2px solid #fff;
-    padding: 1rem;
+    padding: 2rem;
     margin: 0 1rem;
     align-self: center; }
 
@@ -18,52 +18,85 @@
   display: flex;
   justify-content: space-between;
   padding: 1.5rem; }
+  .nav__links {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    transform: translateX(-100vw);
+    transition: all 0.8s ease-out;
+    opacity: 0;
+    text-align: left;
+    justify-content: center;
+    transition: all 1s ease-in-out; }
   .nav__li {
-    display: none; }
-    .nav__li::after {
-      transition: all 0.1s ease; }
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin: 1rem 2rem;
+    font-size: 2rem; }
   .nav__logo {
-    height: 1.5rem;
-    width: auto; }
+    height: 2rem;
+    width: auto;
+    z-index: 200; }
   .nav__menu {
     height: 1.5rem;
-    cursor: pointer; }
+    cursor: pointer;
+    z-index: 200; }
 
 .nav__links.active {
-  background: #000;
-  color: #fff;
-  text-decoration: none;
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  overflow: hidden; }
-  .nav__links.active .nav__li {
-    color: #fff; }
+  transform: translateX(0);
+  opacity: 1;
+  background: #000; }
 
-@media (min-width: 800px) {
+@media (min-width: 500px) {
   .hero {
-    background: url(/images/desktop/image-hero.jpg) center/cover;
-    padding: 0 5rem; }
+    background: url(/images/desktop/image-hero.jpg) top/cover no-repeat;
+    grid-template-rows: 1fr;
+    padding: 0 2rem;
+    height: 50vh; }
     .hero__title {
       width: 400px;
       font-size: 3rem;
       padding: 1.5rem;
-      margin: 0; }
+      margin: 0;
+      margin-bottom: 3rem; }
+  .nav {
+    padding: 2rem 0; } }
+
+@media (min-width: 700px) {
+  .hero {
+    padding: 2rem 5rem; }
   .nav {
     align-items: center;
     padding: 0; }
     .nav__links {
-      display: flex; }
+      display: flex;
+      flex-direction: row;
+      opacity: 1;
+      transform: translateX(0);
+      position: relative;
+      height: auto;
+      width: auto;
+      transition: none; }
     .nav__li {
       display: block;
+      margin: 0;
       padding: 1rem;
-      text-decoration: none;
       color: #fff;
-      font-family: 'Alata', sans-serif; }
+      font-family: 'Alata', sans-serif;
+      text-transform: none;
+      font-size: 1rem; }
     .nav__menu {
       display: none; } }
+
+@media (min-width: 1145px) {
+  .hero__title {
+    font-size: 4rem;
+    max-width: 50%; } }
 
 .feature {
   display: flex;
@@ -85,9 +118,10 @@
     margin: 0 2rem;
     line-height: 1.5;
     font-weight: 300;
-    color: #8c8c8c; }
+    color: #8c8c8c;
+    max-width: 600px; }
 
-@media (min-width: 800px) {
+@media (min-width: 875px) {
   .feature {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
@@ -104,13 +138,15 @@
       grid-row: 2 / 3;
       grid-column: 4 / 8;
       background: #fff;
-      padding: 2rem;
+      padding: 4rem;
       text-align: left; }
     .feature__title {
       width: 100%;
-      font-size: 2.5rem; }
+      font-size: 2.5rem;
+      margin: 0; }
     .feature__text {
-      font-size: 0.9rem; } }
+      font-size: 0.9rem;
+      margin: 0; } }
 
 .creations {
   display: grid;
@@ -122,8 +158,8 @@
     font-size: 2rem;
     font-weight: 300; }
   .creations__button {
-    padding: 0.8rem 2rem;
-    font-family: inherit;
+    padding: 0.5rem 2.5rem;
+    font-family: 'Alata', sans-serif;
     text-transform: uppercase;
     letter-spacing: 2px;
     background: #fff;
@@ -139,7 +175,8 @@
     display: grid;
     grid-gap: 1.5rem;
     grid-template-rows: repeat(8, 1fr);
-    grid-row: 2 / 3; }
+    grid-row: 2 / 3;
+    margin-top: 1rem; }
   .creations__card {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -192,7 +229,9 @@
 
 .footer {
   background: #000;
-  color: #fff; }
+  color: #fff;
+  margin-top: 3rem;
+  padding-top: 1rem; }
   .footer__logo {
     padding: 2rem;
     height: 5.4rem; }
@@ -243,7 +282,8 @@
     .footer__text {
       grid-row: 2 /3;
       grid-column: 2 / 3;
-      justify-self: end; } }
+      justify-self: end;
+      padding: 0; } }
 
 * {
   margin: 0;
