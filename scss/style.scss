@@ -1,7 +1,7 @@
-@import './hero';
-@import './feature';
-@import './creations';
-@import './footer';
+@import "./hero";
+@import "./feature";
+@import "./creations";
+@import "./footer";
 
 $gray: hsl(0, 0%, 55%);
 $dk-gray: hsl(0, 0%, 41%);
@@ -14,31 +14,32 @@ $dk-gray: hsl(0, 0%, 41%);
 
 body {
   text-align: center;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   overflow-x: hidden;
+}
+
+.creations__button,
+.feature__text {
+  font-family: "Alata", sans-serif;
+}
+
+li,
+a {
+  text-decoration: none;
 }
 
 h1,
 h2,
-h3 {
+h3,
+button,
+li {
   text-transform: uppercase;
-}
-
-
-.nav__li:hover::after,
-.footer__link:hover::after {
-  content: '';
-  display: block;
-  width: 20px;
-  padding-top: 8px;
-  margin: 0 auto;
-  border-bottom: 2px solid #fff;
+  font-weight: 300;
 }
 
 .desktop-image {
   display: none;
 }
-
 
 @media (min-width: 800px) {
   .mobile-image {
@@ -48,5 +49,4 @@ h3 {
   .desktop-image {
     display: block;
   }
-
 }
